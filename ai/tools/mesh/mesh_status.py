@@ -22,12 +22,20 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# HTTP client detection
+httpx = None
+requests_lib = None
+HTTP_CLIENT = None
+
 try:
     import httpx
     HTTP_CLIENT = "httpx"
 except ImportError:
+    pass
+
+if HTTP_CLIENT is None:
     try:
-        import requests
+        import requests as requests_lib
         HTTP_CLIENT = "requests"
     except ImportError:
         print("Error: httpx or requests required")
@@ -53,10 +61,9 @@ def http_get(url: str, timeout: float = 3.0) -> Optional[Dict]:
                 response = client.get(url)
                 return response.json() if response.status_code == 200 else None
         else:
-            import requests
-            response = requests.get(url, timeout=timeout)
+            response = requests_lib.get(url, timeout=timeout)
             return response.json() if response.status_code == 200 else None
-    except Exception:
+    except (httpx.RequestError, OSError, ValueError):
         return None
 
 

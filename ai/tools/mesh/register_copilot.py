@@ -26,16 +26,20 @@ from datetime import datetime
 from typing import Any, Dict, Optional
 
 # Attempt to use httpx for async HTTP, fallback to requests
+HTTPX_AVAILABLE = False
+REQUESTS_AVAILABLE = False
+
 try:
     import httpx
     HTTPX_AVAILABLE = True
 except ImportError:
-    HTTPX_AVAILABLE = False
-    try:
-        import requests
-        REQUESTS_AVAILABLE = True
-    except ImportError:
-        REQUESTS_AVAILABLE = False
+    pass
+
+try:
+    import requests as requests_lib  # Renamed to avoid shadowing in local imports
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    pass
 
 logging.basicConfig(
     level=logging.INFO,
@@ -149,8 +153,7 @@ class CopilotAgent:
                     response = await client.post(url, json=payload)
                     result = response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.post(url, json=payload, timeout=10)
+                response = requests_lib.post(url, json=payload, timeout=10)
                 result = response.json()
             else:
                 logger.error("No HTTP client available (install httpx or requests)")
@@ -168,7 +171,7 @@ class CopilotAgent:
             
             return result
             
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.error("AINLP.dendritic: Registration failed: %s", e)
             return {"status": "error", "message": str(e)}
     
@@ -193,8 +196,7 @@ class CopilotAgent:
                     response = await client.post(url, json=payload)
                     result = response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.post(url, json=payload, timeout=5)
+                response = requests_lib.post(url, json=payload, timeout=5)
                 result = response.json()
             else:
                 return {"status": "error", "message": "no http client"}
@@ -208,7 +210,7 @@ class CopilotAgent:
             
             return result
             
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.warning("AINLP.dendritic: Heartbeat failed: %s", e)
             return {"status": "error", "message": str(e)}
     
@@ -241,8 +243,7 @@ class CopilotAgent:
                     response = await client.post(url, json=message)
                     result = response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.post(url, json=message, timeout=10)
+                response = requests_lib.post(url, json=message, timeout=10)
                 result = response.json()
             else:
                 return {"status": "error", "message": "no http client"}
@@ -253,7 +254,7 @@ class CopilotAgent:
             )
             return result
             
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.error("AINLP.dendritic: Message failed: %s", e)
             return {"status": "error", "message": str(e)}
     
@@ -267,12 +268,11 @@ class CopilotAgent:
                     response = await client.get(url)
                     return response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.get(url, timeout=5)
+                response = requests_lib.get(url, timeout=5)
                 return response.json()
             else:
                 return {"status": "error", "message": "no http client"}
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             return {"status": "error", "message": str(e)}
     
     async def deregister(self) -> Dict[str, Any]:
@@ -288,8 +288,7 @@ class CopilotAgent:
                     response = await client.delete(url)
                     result = response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.delete(url, timeout=5)
+                response = requests_lib.delete(url, timeout=5)
                 result = response.json()
             else:
                 return {"status": "error", "message": "no http client"}
@@ -301,7 +300,7 @@ class CopilotAgent:
             
             return result
             
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.error("AINLP.dendritic: Deregistration failed: %s", e)
             return {"status": "error", "message": str(e)}
     

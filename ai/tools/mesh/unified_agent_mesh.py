@@ -137,7 +137,7 @@ class UnifiedAgentMesh:
         self._agent_status: Dict[str, bool] = {}
         self._start_time: Optional[datetime] = None
         
-        logger.info(f"🌐 Unified Agent Mesh created (mode: {mode.value})")
+        logger.info("🌐 Unified Agent Mesh created (mode: %s)", mode.value)
     
     # ─────────────────────────────────────────────────────────────────────────
     # LIFECYCLE
@@ -189,10 +189,10 @@ class UnifiedAgentMesh:
         self._initialized = True
         
         logger.info("✅ Unified Agent Mesh initialized")
-        logger.info(f"   Agents: {self._agent_status}")
-        logger.info(f"   Populations: {len(self._orchestrator.populations)}")
+        logger.info("   Agents: %s", self._agent_status)
+        logger.info("   Populations: %d", len(self._orchestrator.populations))
         if self._router:
-            logger.info(f"   Cells: {len(self._router.cells)}")
+            logger.info("   Cells: %d", len(self._router.cells))
         
         return self._agent_status
     
@@ -339,6 +339,7 @@ class UnifiedAgentMesh:
     
     def get_health_report(self) -> MeshHealthReport:
         """Get current mesh health report."""
+        stats = self._orchestrator.get_population_stats() if self._orchestrator else {}
         return MeshHealthReport(
             timestamp=datetime.now(timezone.utc),
             mode=self.mode,
@@ -346,7 +347,7 @@ class UnifiedAgentMesh:
             populations_active=len(self._orchestrator.populations) if self._orchestrator else 0,
             cells_healthy=len([c for c in self._router.cells.values() if c.is_healthy]) if self._router else 0,
             cells_total=len(self._router.cells) if self._router else 0,
-            heartbeat_count=self._orchestrator._cycle_count if self._orchestrator else 0,
+            heartbeat_count=stats.get("cycle_count", 0),
         )
     
     def get_population_stats(self) -> Dict[str, Any]:

@@ -174,7 +174,7 @@ def discover_tools() -> Dict[str, List[str]]:
     tools: Dict[str, List[str]] = {}
     
     if not tools_path.exists():
-        logger.warning(f"Tools path not found: {tools_path}")
+        logger.warning("Tools path not found: %s", tools_path)
         return tools
     
     for category_path in tools_path.iterdir():
@@ -194,7 +194,7 @@ def discover_tools() -> Dict[str, List[str]]:
             tools["root"].append(tool_file.stem)
     
     _tools_cache = tools
-    logger.info(f"Discovered {sum(len(v) for v in tools.values())} tools across {len(tools)} categories")
+    logger.info("Discovered %d tools across %d categories", sum(len(v) for v in tools.values()), len(tools))
     return tools
 
 
@@ -208,7 +208,7 @@ def get_consciousness_analyzer():
         from ai.tools.consciousness.consciousness_analyzer import ConsciousnessAnalyzer
         return ConsciousnessAnalyzer
     except ImportError as e:
-        logger.error(f"Failed to import ConsciousnessAnalyzer: {e}")
+        logger.error("Failed to import ConsciousnessAnalyzer: %s", e)
         return None
 
 
@@ -218,7 +218,7 @@ def get_session_bootstrap():
         from ai.tools.mesh.session_bootstrap import SessionBootstrap
         return SessionBootstrap
     except ImportError as e:
-        logger.error(f"Failed to import SessionBootstrap: {e}")
+        logger.error("Failed to import SessionBootstrap: %s", e)
         return None
 
 
@@ -228,7 +228,7 @@ def get_population_orchestrator():
         from ai.tools.mesh.heartbeat_population_orchestrator import HeartbeatPopulationOrchestrator
         return HeartbeatPopulationOrchestrator
     except ImportError as e:
-        logger.error(f"Failed to import HeartbeatPopulationOrchestrator: {e}")
+        logger.error("Failed to import HeartbeatPopulationOrchestrator: %s", e)
         return None
 
 
@@ -302,8 +302,8 @@ async def analyze_consciousness(request: ConsciousnessAnalysisRequest):
             fitness_stats=analysis.get("fitness_stats")
         )
     except Exception as e:
-        logger.error(f"Consciousness analysis failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error("Consciousness analysis failed: %s", e)
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/bootstrap/session", response_model=SessionBootstrapResponse)
@@ -326,18 +326,18 @@ async def bootstrap_session(request: SessionBootstrapRequest):
         # Initialize (synchronous for now)
         crystals = bootstrap.crystals
         context = bootstrap.context_summary
-        mesh_status = bootstrap.mesh_summary
+        local_mesh_status = bootstrap.mesh_summary
         
         return SessionBootstrapResponse(
             session_id=bootstrap.session_id,
             registered=bootstrap.registered,
             crystals_loaded=len(crystals),
             context_summary=context or "Session initialized",
-            mesh_status=mesh_status or {"status": "connected"}
+            mesh_status=local_mesh_status or {"status": "connected"}
         )
     except Exception as e:
-        logger.error(f"Session bootstrap failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error("Session bootstrap failed: %s", e)
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.post("/crystalize/knowledge", response_model=CrystalCreateResponse)
@@ -376,8 +376,8 @@ async def crystalize_knowledge(request: CrystalCreateRequest):
                     detail=f"Memory cell error: {response.text}"
                 )
     except httpx.RequestError as e:
-        logger.error(f"Crystal creation failed: {e}")
-        raise HTTPException(status_code=503, detail=f"Memory cell unreachable: {e}")
+        logger.error("Crystal creation failed: %s", e)
+        raise HTTPException(status_code=503, detail=f"Memory cell unreachable: {e}") from e
 
 
 @app.post("/orchestrate/population", response_model=PopulationOrchestrationResponse)
@@ -419,8 +419,8 @@ async def orchestrate_population(request: PopulationOrchestrationRequest):
             timestamp=datetime.now(timezone.utc).isoformat()
         )
     except Exception as e:
-        logger.error(f"Population orchestration failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error("Population orchestration failed: %s", e)
+        raise HTTPException(status_code=500, detail=str(e)) from e
 
 
 @app.get("/mesh/status")
@@ -445,7 +445,7 @@ async def mesh_status():
                 "tools_available": sum(len(v) for v in discover_tools().values())
             }
         }
-    except Exception as e:
+    except (httpx.RequestError, asyncio.TimeoutError, OSError) as e:
         return {
             "status": "partial",
             "error": str(e),
@@ -493,14 +493,14 @@ async def get_dendritic_patterns():
 @app.on_event("startup")
 async def startup_event():
     """Initialize on startup."""
-    logger.info(f"🧬 Intelligence Bridge starting on port {PORT}")
-    logger.info(f"   Discovery URL: {DISCOVERY_URL}")
-    logger.info(f"   Memory URL: {MEMORY_URL}")
+    logger.info("🧬 Intelligence Bridge starting on port %d", PORT)
+    logger.info("   Discovery URL: %s", DISCOVERY_URL)
+    logger.info("   Memory URL: %s", MEMORY_URL)
     
     # Pre-discover tools
     tools = discover_tools()
     total = sum(len(v) for v in tools.values())
-    logger.info(f"   Tools discovered: {total}")
+    logger.info("   Tools discovered: %d", total)
 
 
 @app.on_event("shutdown")

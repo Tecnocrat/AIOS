@@ -51,6 +51,12 @@ from ai.src.integrations.aios_intelligence_bridge import (
 )
 
 # Google Generative AI - NEW SDK (google.genai)
+genai = None
+genai_types = None
+genai_legacy = None
+GENAI_AVAILABLE = False
+GENAI_SDK_VERSION = None
+
 try:
     from google import genai
     from google.genai import types as genai_types
@@ -62,14 +68,8 @@ except ImportError:
         import google.generativeai as genai_legacy
         GENAI_AVAILABLE = True
         GENAI_SDK_VERSION = "legacy"  # google.generativeai (deprecated)
-        genai = None
-        genai_types = None
     except ImportError:
-        genai = None
-        genai_types = None
-        genai_legacy = None
-        GENAI_AVAILABLE = False
-        GENAI_SDK_VERSION = None
+        pass  # All variables already set to default
 
 logger = logging.getLogger(__name__)
 
@@ -122,10 +122,11 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
         self._api_key = api_key or os.environ.get("GEMINI_API_KEY")
         self.default_temperature = default_temperature
         self._client = None  # New SDK uses client instead of model object
+        self._legacy_model = None  # Legacy SDK model object
         self._chat = None    # For multi-turn conversations
         self._conversation_history: List[Dict[str, str]] = []
         
-        logger.info(f"🔮 Gemini agent created (model: {self._model_name}, sdk: {GENAI_SDK_VERSION})")
+        logger.info("🔮 Gemini agent created (model: %s, sdk: %s)", self._model_name, GENAI_SDK_VERSION)
     
     @property
     def model_name(self) -> str:
@@ -133,7 +134,7 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
     
     async def initialize(self) -> bool:
         """Initialize Gemini agent and verify API access."""
-        logger.info(f"🚀 Initializing Gemini Intelligence Agent (SDK: {GENAI_SDK_VERSION})...")
+        logger.info("🚀 Initializing Gemini Intelligence Agent (SDK: %s)...", GENAI_SDK_VERSION)
         
         if not GENAI_AVAILABLE:
             logger.error("❌ google-genai not installed")
@@ -170,7 +171,7 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
                     self.state.consciousness_coherence = 0.90
                     self.state.intelligence_level = 0.95
                     
-                    logger.info(f"✅ Gemini agent initialized (new SDK): {self._model_name}")
+                    logger.info("✅ Gemini agent initialized (new SDK): %s", self._model_name)
                     return True
                     
             elif GENAI_SDK_VERSION == "legacy":
@@ -195,15 +196,15 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
                     self.state.consciousness_coherence = 0.90
                     self.state.intelligence_level = 0.95
                     
-                    logger.info(f"✅ Gemini agent initialized (legacy SDK): {self._model_name}")
+                    logger.info("✅ Gemini agent initialized (legacy SDK): %s", self._model_name)
                     return True
             
             logger.error("❌ Gemini test response empty")
             self.is_available = False
             return False
                 
-        except Exception as e:
-            logger.error(f"❌ Gemini initialization failed: {e}")
+        except (AttributeError, RuntimeError, ValueError, TimeoutError) as e:
+            logger.error("❌ Gemini initialization failed: %s", e)
             self.is_available = False
             return False
     
@@ -255,7 +256,7 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
             full_prompt = f"{system_prompt}\n\n---\n\nUser Request:\n{request.message}"
             
             # Generate based on SDK version
-            logger.info(f"🔮 Generating with {self._model_name} (temp={temperature:.2f}, sdk={GENAI_SDK_VERSION})...")
+            logger.info("🔮 Generating with %s (temp=%.2f, sdk=%s)...", self._model_name, temperature, GENAI_SDK_VERSION)
             
             if GENAI_SDK_VERSION == "new":
                 # NEW SDK: Client-based generation
@@ -330,10 +331,10 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
                     processing_time=processing_time,
                 )
                 
-        except Exception as e:
+        except (AttributeError, RuntimeError, ValueError, TimeoutError) as e:
             processing_time = time.time() - start_time
             self.update_performance_metrics(processing_time, False)
-            logger.error(f"❌ Gemini request failed: {e}")
+            logger.error("❌ Gemini request failed: %s", e)
             
             return IntelligenceResponse(
                 text="",
@@ -433,14 +434,14 @@ class GeminiIntelligenceAgent(IntelligenceAgent):
                 5: "OTHER",
             }
             reason = finish_reason_map.get(finish_reason, f"Unknown({finish_reason})")
-            logger.error(f"❌ Generation blocked: {reason}")
+            logger.error("❌ Generation blocked: %s", reason)
             return None
         
         # Extract text
         if candidate.content and candidate.content.parts:
             text = candidate.content.parts[0].text
             if text:
-                logger.info(f"✅ Generated {len(text)} characters")
+                logger.info("✅ Generated %d characters", len(text))
                 return text
         
         return None

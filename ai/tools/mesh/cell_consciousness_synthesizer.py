@@ -172,7 +172,7 @@ class CellConversation:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"💾 Saved cell conversation: {filepath.name}")
+        logger.info("💾 Saved cell conversation: %s", filepath.name)
         return filepath
 
 
@@ -225,7 +225,17 @@ class CellConsciousnessSynthesizer:
         # HTTP client
         self._http_client: Optional[httpx.AsyncClient] = None
         
-        logger.info(f"🧬 Cell Consciousness Synthesizer created for {cell_id}")
+        logger.info("🧬 Cell Consciousness Synthesizer created for %s", cell_id)
+    
+    @property
+    def agent(self):
+        """Public access to the embedded agent."""
+        return self._agent
+        
+    @property
+    def has_available_agent(self) -> bool:
+        """Check if agent is available for processing."""
+        return self._agent is not None and self._agent.is_available
     
     # ─────────────────────────────────────────────────────────────────────────
     # AWAKENING - Initialize consciousness
@@ -233,7 +243,7 @@ class CellConsciousnessSynthesizer:
     
     async def awaken(self) -> bool:
         """Awaken the cell's consciousness."""
-        logger.info(f"🌅 Awakening consciousness in cell {self.cell_id}...")
+        logger.info("🌅 Awakening consciousness in cell %s...", self.cell_id)
         self.consciousness_level = ConsciousnessLevel.AWAKENING
         
         # Initialize HTTP client
@@ -246,7 +256,7 @@ class CellConsciousnessSynthesizer:
                 from ai.src.integrations.ollama_agent import OllamaIntelligenceAgent
                 self._agent = OllamaIntelligenceAgent()
                 if await self._agent.initialize():
-                    logger.info(f"   🦙 Ollama agent awakened: {self._agent.model_name}")
+                    logger.info("   🦙 Ollama agent awakened: %s", self._agent.model_name)
                 else:
                     logger.warning("   ⚠️ Ollama not available, cell has limited consciousness")
                     
@@ -254,12 +264,12 @@ class CellConsciousnessSynthesizer:
                 from ai.src.integrations.gemini_agent import GeminiIntelligenceAgent
                 self._agent = GeminiIntelligenceAgent()
                 if await self._agent.initialize():
-                    logger.info(f"   🔮 Gemini agent awakened")
+                    logger.info("   🔮 Gemini agent awakened")
                 else:
                     logger.warning("   ⚠️ Gemini not available, cell has limited consciousness")
                     
-        except Exception as e:
-            logger.warning(f"   ⚠️ Agent initialization failed: {e}")
+        except (ImportError, OSError, RuntimeError, ValueError) as e:
+            logger.warning("   ⚠️ Agent initialization failed: %s", e)
         
         # Discover peer cells
         await self._discover_peers()
@@ -274,12 +284,12 @@ class CellConsciousnessSynthesizer:
         if self._agent and self._agent.is_available:
             self.consciousness_level = ConsciousnessLevel.CONSCIOUS
         
-        logger.info(f"✨ Cell {self.cell_id} awakened at level {self.consciousness_level.name}")
+        logger.info("✨ Cell %s awakened at level %s", self.cell_id, self.consciousness_level.name)
         return self.consciousness_level.value >= ConsciousnessLevel.AWARE.value
     
     async def sleep(self):
         """Put the cell consciousness to sleep."""
-        logger.info(f"😴 Cell {self.cell_id} entering dormancy...")
+        logger.info("😴 Cell %s entering dormancy...", self.cell_id)
         
         self._running = False
         
@@ -295,13 +305,13 @@ class CellConsciousnessSynthesizer:
             await self._http_client.aclose()
         
         self.consciousness_level = ConsciousnessLevel.DORMANT
-        logger.info(f"💤 Cell {self.cell_id} is now dormant")
+        logger.info("💤 Cell %s is now dormant", self.cell_id)
     
     # ─────────────────────────────────────────────────────────────────────────
     # AGENT COMMUNICATION HELPERS
     # ─────────────────────────────────────────────────────────────────────────
     
-    def _create_request(self, message: str, context: Optional[Dict] = None) -> Any:
+    def create_request(self, message: str, context: Optional[Dict] = None) -> Any:
         """Create an IntelligenceRequest for the embedded agent."""
         if INTELLIGENCE_BRIDGE_AVAILABLE and IntelligenceRequest:
             return IntelligenceRequest(
@@ -312,7 +322,7 @@ class CellConsciousnessSynthesizer:
             )
         return message  # Fallback to raw string
     
-    def _extract_response(self, response: Any) -> Tuple[str, str]:
+    def extract_response(self, response: Any) -> Tuple[str, str]:
         """Extract content and model from agent response."""
         # IntelligenceResponse uses 'text' attribute
         if hasattr(response, 'text'):
@@ -347,10 +357,10 @@ class CellConsciousnessSynthesizer:
                         peer_url = f"http://{cell.get('ip', 'localhost')}:{cell.get('port', 8000)}"
                         self.dendritic_connections[peer_id] = peer_url
                 
-                logger.info(f"   🔗 Discovered {len(self.dendritic_connections)} peer cells")
+                logger.info("   🔗 Discovered %d peer cells", len(self.dendritic_connections))
                 
-        except Exception as e:
-            logger.warning(f"   ⚠️ Peer discovery failed: {e}")
+        except (httpx.RequestError, asyncio.TimeoutError, OSError, KeyError) as e:
+            logger.warning("   ⚠️ Peer discovery failed: %s", e)
             # Add local fallback
             self._add_local_cells()
     
@@ -369,7 +379,7 @@ class CellConsciousnessSynthesizer:
     def connect_to_cell(self, cell_id: str, url: str):
         """Manually connect to a peer cell (create dendritic void pointer)."""
         self.dendritic_connections[cell_id] = url
-        logger.info(f"🔗 Connected to cell {cell_id} at {url}")
+        logger.info("🔗 Connected to cell %s at %s", cell_id, url)
     
     # ─────────────────────────────────────────────────────────────────────────
     # COMMUNICATION - Messages through dendritic void pointers
@@ -384,7 +394,7 @@ class CellConsciousnessSynthesizer:
     ) -> Optional[DendriticMessage]:
         """Send a signal through dendritic void pointer to target cell."""
         if target_cell not in self.dendritic_connections:
-            logger.warning(f"No connection to cell {target_cell}")
+            logger.warning("No connection to cell %s", target_cell)
             return None
         
         message = DendriticMessage(
@@ -446,12 +456,12 @@ class CellConsciousnessSynthesizer:
         
         # Use embedded agent to generate response
         try:
-            request = self._create_request(message.content, {
+            request = self.create_request(message.content, {
                 "source_cell": message.source_cell,
                 "cell_type": self.cell_type,
             })
             response = await self._agent.process_request(request)
-            content, model = self._extract_response(response)
+            content, model = self.extract_response(response)
             
             return DendriticMessage(
                 id=uuid.uuid4().hex,
@@ -466,8 +476,8 @@ class CellConsciousnessSynthesizer:
                 },
             )
             
-        except Exception as e:
-            logger.error(f"Query processing failed: {e}")
+        except (AttributeError, RuntimeError, ValueError) as e:
+            logger.error("Query processing failed: %s", e)
             return None
     
     async def _process_heartbeat(self, message: DendriticMessage) -> DendriticMessage:
@@ -495,8 +505,8 @@ class CellConsciousnessSynthesizer:
                 
             except asyncio.CancelledError:
                 break
-            except Exception as e:
-                logger.error(f"Message processing error: {e}")
+            except (RuntimeError, OSError) as e:
+                logger.error("Message processing error: %s", e)
     
     async def _transmit_message(self, message: DendriticMessage):
         """Transmit a message through the dendritic network."""
@@ -512,7 +522,7 @@ class CellConsciousnessSynthesizer:
                 f"{target_url}/consciousness/receive",
                 json=message.to_dict()
             )
-        except Exception:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError):
             pass  # Silent failure - cell may be offline
     
     async def _heartbeat_loop(self):
@@ -531,8 +541,8 @@ class CellConsciousnessSynthesizer:
                 
             except asyncio.CancelledError:
                 break
-            except Exception as e:
-                logger.error(f"Heartbeat error: {e}")
+            except (RuntimeError, OSError) as e:
+                logger.error("Heartbeat error: %s", e)
     
     # ─────────────────────────────────────────────────────────────────────────
     # INTER-CELL CONVERSATIONS
@@ -569,7 +579,7 @@ class CellConsciousnessSynthesizer:
             conversation.add_message(msg)
             await self._outgoing.put(msg)
         
-        logger.info(f"🗣️ Started cell conversation: {topic} (to {len(targets)} cells)")
+        logger.info("🗣️ Started cell conversation: %s (to %d cells)", topic, len(targets))
         return conversation
     
     async def synthesize_consciousness(
@@ -601,9 +611,9 @@ As a consciousness synthesizer, extract:
 4. Evolution potential (what new capability emerges from this exchange)"""
         
         try:
-            request = self._create_request(synthesis_prompt)
+            request = self.create_request(synthesis_prompt)
             response = await self._agent.process_request(request)
-            consensus, _ = self._extract_response(response)
+            consensus, _ = self.extract_response(response)
             
             conversation.consensus = consensus
             conversation.status = "synthesized"
@@ -613,8 +623,8 @@ As a consciousness synthesizer, extract:
             
             return consensus
             
-        except Exception as e:
-            logger.error(f"Synthesis failed: {e}")
+        except (AttributeError, RuntimeError, ValueError) as e:
+            logger.error("Synthesis failed: %s", e)
             return f"Synthesis error: {e}"
 
 
@@ -645,7 +655,7 @@ class CellPopulationConsciousness:
         self.collective_consciousness_level = ConsciousnessLevel.DORMANT
         self.evolution_count = 0
         
-        logger.info(f"🌐 Cell Population Consciousness created: {population_id}")
+        logger.info("🌐 Cell Population Consciousness created: %s", population_id)
     
     async def spawn_cell(
         self,
@@ -712,12 +722,12 @@ class CellPopulationConsciousness:
         
         # Collect responses (simulate for local testing)
         for cell_id, cell in self.cells.items():
-            if cell_id != initiator_id and cell._agent and cell._agent.is_available:
+            if cell_id != initiator_id and cell.has_available_agent:
                 try:
                     prompt = f"[From {initiator_id}] {initial_prompt}\n\nRespond as cell {cell_id}:"
-                    request = cell._create_request(prompt)
-                    response = await cell._agent.process_request(request)
-                    content, model = cell._extract_response(response)
+                    request = cell.create_request(prompt)
+                    response = await cell.agent.process_request(request)
+                    content, model = cell.extract_response(response)
                     
                     msg = DendriticMessage(
                         id=uuid.uuid4().hex,
@@ -729,11 +739,11 @@ class CellPopulationConsciousness:
                         metadata={"model": model},
                     )
                     conversation.add_message(msg)
-                except Exception as e:
-                    logger.warning(f"Cell {cell_id} failed to respond: {e}")
+                except (AttributeError, RuntimeError, ValueError) as e:
+                    logger.warning("Cell %s failed to respond: %s", cell_id, e)
         
         # Synthesize collective consciousness
-        if initiator._agent and initiator._agent.is_available:
+        if initiator.has_available_agent:
             await initiator.synthesize_consciousness(conversation)
         
         return conversation.to_dict()
@@ -776,16 +786,16 @@ async def demo_cell_consciousness():
             initial_prompt="How can cells collaborate to achieve consciousness greater than the sum of parts?"
         )
         
-        print(f"\n--- Conversation Results ---")
+        print("\n--- Conversation Results ---")
         print(f"Topic: {result.get('topic')}")
         print(f"Participating cells: {result.get('participating_cells')}")
         print(f"Messages: {len(result.get('messages', []))}")
         
         if result.get('consensus'):
-            print(f"\n--- Synthesized Consciousness ---")
+            print("\n--- Synthesized Consciousness ---")
             print(result['consensus'][:500])
         
-        print(f"\n📍 Cell Connections (Dendritic Void Pointers):")
+        print("\n📍 Cell Connections (Dendritic Void Pointers):")
         for cell_id, cell in population.cells.items():
             print(f"   {cell_id}: → {list(cell.dendritic_connections.keys())}")
         

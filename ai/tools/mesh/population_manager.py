@@ -191,7 +191,7 @@ class PopulationManager:
                 success=True
             )
             
-        except Exception as e:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError) as e:
             latency = (datetime.now(timezone.utc) - start_time).total_seconds() * 1000
             return PopulationResponse(
                 instance_id=instance.instance_id,
@@ -575,40 +575,40 @@ if __name__ == "__main__":
         exit(1)
     
     # Create manager
-    manager = PopulationManager()
+    demo_manager = PopulationManager()
     
     # Create Nous population
-    nous_bp = create_nous_blueprint()
-    nous_pop = create_population(nous_bp, size=3)
+    demo_bp = create_nous_blueprint()
+    demo_pop = create_population(demo_bp, size=3)
     
-    print(f"\nCreated Nous population: {nous_pop.population_id}")
-    print(f"  Size: {nous_pop.size}")
-    print(f"  Instances:")
-    for instance in nous_pop.instances:
-        temp = instance.get_param("temperature")
-        print(f"    - {instance.instance_id}: temp={temp:.3f}")
+    print(f"\nCreated Nous population: {demo_pop.population_id}")
+    print(f"  Size: {demo_pop.size}")
+    print("  Instances:")
+    for demo_instance in demo_pop.instances:
+        temp = demo_instance.get_param("temperature")
+        print(f"    - {demo_instance.instance_id}: temp={temp:.3f}")
     
     # Register population
-    manager.register_population(nous_pop)
+    demo_manager.register_population(demo_pop)
     
     # Show status
-    print(f"\nManager status:")
-    status = manager.get_status()
+    print("\nManager status:")
+    status = demo_manager.get_status()
     print(f"  Populations: {len(status['populations'])}")
     print(f"  Total instances: {status['total_instances']}")
     
     # Simulate evolution
-    print(f"\nSimulating evolution...")
-    for instance in nous_pop.instances:
+    print("\nSimulating evolution...")
+    for demo_instance in demo_pop.instances:
         # Random fitness scores
-        manager.update_fitness(
-            instance.instance_id,
+        demo_manager.update_fitness(
+            demo_instance.instance_id,
             success=random.random() > 0.3,
             latency_ms=random.uniform(100, 2000),
             feedback_score=random.uniform(0.3, 0.9)
         )
     
-    result = manager.evolve_population(nous_pop.population_id)
-    print(f"  Evolution result: {result}")
-    print(f"  New generation: {nous_pop.generation}")
-    print(f"  Current size: {nous_pop.size}")
+    evolution_result = demo_manager.evolve_population(demo_pop.population_id)
+    print(f"  Evolution result: {evolution_result}")
+    print(f"  New generation: {demo_pop.generation}")
+    print(f"  Current size: {demo_pop.size}")

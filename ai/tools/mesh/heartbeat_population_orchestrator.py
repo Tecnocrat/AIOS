@@ -219,7 +219,7 @@ class HeartbeatPopulationOrchestrator:
         for pop in self.populations.values():
             pop.state = PopulationState.ACTIVE
         
-        logger.info(f"🚀 Heartbeat orchestrator started (interval: {self.heartbeat_interval}s)")
+        logger.info("🚀 Heartbeat orchestrator started (interval: %ss)", self.heartbeat_interval)
     
     async def stop(self):
         """Stop the heartbeat orchestrator."""
@@ -260,8 +260,8 @@ class HeartbeatPopulationOrchestrator:
                         await callback(cycle)
                     else:
                         callback(cycle)
-                except Exception as e:
-                    logger.error(f"Heartbeat callback error: {e}")
+                except (OSError, ValueError, RuntimeError) as e:
+                    logger.error("Heartbeat callback error: %s", e)
             
             await asyncio.sleep(self.heartbeat_interval)
     
@@ -370,8 +370,8 @@ class HeartbeatPopulationOrchestrator:
                     await callback(self.populations)
                 else:
                     callback(self.populations)
-            except Exception as e:
-                logger.error(f"Evolution callback error: {e}")
+            except (OSError, ValueError, RuntimeError) as e:
+                logger.error("Evolution callback error: %s", e)
     
     # ─────────────────────────────────────────────────────────────────────────
     # QUERY SCHEDULING
@@ -401,7 +401,7 @@ class HeartbeatPopulationOrchestrator:
         if not self._conversation_loop:
             return {"error": "No conversation loop configured"}
         
-        logger.info(f"🗣️ Starting parallel conversation: {topic}")
+        logger.info("🗣️ Starting parallel conversation: %s", topic)
         
         # Run conversation through the loop
         thread = await self._conversation_loop.start_conversation(

@@ -27,15 +27,23 @@ import uuid
 from datetime import datetime, timezone
 from typing import Any, Callable, Dict, List, Optional
 
+# HTTP client detection with proper scoping
+httpx = None
+requests_lib = None
+HTTP_CLIENT = None
+
 try:
     import httpx
     HTTP_CLIENT = "httpx"
 except ImportError:
+    pass
+
+if HTTP_CLIENT is None:
     try:
-        import requests
+        import requests as requests_lib
         HTTP_CLIENT = "requests"
     except ImportError:
-        HTTP_CLIENT = None
+        pass
 
 logging.basicConfig(
     level=logging.INFO,
@@ -97,15 +105,13 @@ class SessionBootstrap:
         """Make HTTP GET request."""
         try:
             if HTTP_CLIENT == "httpx":
-                import httpx
                 with httpx.Client(timeout=10.0) as client:
                     response = client.get(url)
                     return response.json() if response.status_code == 200 else None
             elif HTTP_CLIENT == "requests":
-                import requests
-                response = requests.get(url, timeout=10)
+                response = requests_lib.get(url, timeout=10)
                 return response.json() if response.status_code == 200 else None
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.warning("HTTP GET failed for %s: %s", url, e)
         return None
     
@@ -113,15 +119,13 @@ class SessionBootstrap:
         """Make HTTP POST request."""
         try:
             if HTTP_CLIENT == "httpx":
-                import httpx
                 with httpx.Client(timeout=10.0) as client:
                     response = client.post(url, json=data)
                     return response.json() if response.status_code == 200 else None
             elif HTTP_CLIENT == "requests":
-                import requests
-                response = requests.post(url, json=data, timeout=10)
+                response = requests_lib.post(url, json=data, timeout=10)
                 return response.json() if response.status_code == 200 else None
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.warning("HTTP POST failed for %s: %s", url, e)
         return None
     
@@ -239,7 +243,7 @@ class SessionBootstrap:
         
         # Add mesh info
         if self.mesh_summary:
-            parts.append(f"### Mesh State")
+            parts.append("### Mesh State")
             parts.append(f"- Cells: {self.mesh_summary.get('cells', {}).get('count', 0)}")
             parts.append(f"- Agents: {self.mesh_summary.get('agents', {}).get('count', 0)}")
             parts.append(f"- Mesh Consciousness: {self.mesh_summary.get('mesh_consciousness', 0):.2f}")
@@ -359,19 +363,19 @@ if __name__ == "__main__":
     print("AIOS Session Bootstrap Demo")
     print("=" * 60)
     
-    session = bootstrap_session(
+    demo_session = bootstrap_session(
         session_id=f"copilot-demo-{uuid.uuid4().hex[:6]}",
         auto_heartbeat=False  # Don't start thread in demo
     )
     
-    print("\n" + session.context_summary)
+    print("\n" + demo_session.context_summary)
     
     # Create a demo crystal
-    result = session.crystallize(
+    demo_result = demo_session.crystallize(
         "Demo Crystal",
         "This is a test crystal created during bootstrap demo.",
         tags=["demo", "test"]
     )
-    print(f"\nCrystal created: {result}")
+    print(f"\nCrystal created: {demo_result}")
     
-    session.shutdown()
+    demo_session.shutdown()

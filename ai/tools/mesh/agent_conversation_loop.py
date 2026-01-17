@@ -133,7 +133,7 @@ class ConversationThread:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        logger.info(f"💾 Saved conversation: {filepath.name}")
+        logger.info("💾 Saved conversation: %s", filepath.name)
         return filepath
 
 
@@ -210,8 +210,8 @@ class AgentConversationLoop:
                         "started_at": data.get("started_at", ""),
                         "consensus_preview": data.get("consensus", "")[:100] if data.get("consensus") else None,
                     })
-                except Exception as e:
-                    logger.warning(f"Failed to read {json_file}: {e}")
+                except (json.JSONDecodeError, OSError, KeyError) as e:
+                    logger.warning("Failed to read %s: %s", json_file, e)
             
             if len(conversations) >= limit:
                 break
@@ -224,8 +224,8 @@ class AgentConversationLoop:
         try:
             with open(filepath, "r", encoding="utf-8") as f:
                 return json.load(f)
-        except Exception as e:
-            logger.error(f"Failed to load conversation: {e}")
+        except (json.JSONDecodeError, OSError) as e:
+            logger.error("Failed to load conversation: %s", e)
             return None
     
     # ─────────────────────────────────────────────────────────────────────────
@@ -243,8 +243,8 @@ class AgentConversationLoop:
             results["gemini"] = await self._gemini_agent.initialize()
             if results["gemini"]:
                 logger.info("✅ Gemini agent ready")
-        except Exception as e:
-            logger.warning(f"⚠️ Gemini not available: {e}")
+        except (ImportError, OSError, ValueError) as e:
+            logger.warning("⚠️ Gemini not available: %s", e)
             results["gemini"] = False
         
         # Initialize Ollama
@@ -253,9 +253,9 @@ class AgentConversationLoop:
             self._ollama_agent = OllamaIntelligenceAgent()
             results["ollama"] = await self._ollama_agent.initialize()
             if results["ollama"]:
-                logger.info(f"✅ Ollama agent ready ({self._ollama_agent.model_name})")
-        except Exception as e:
-            logger.warning(f"⚠️ Ollama not available: {e}")
+                logger.info("✅ Ollama agent ready (%s)", self._ollama_agent.model_name)
+        except (ImportError, OSError, ValueError) as e:
+            logger.warning("⚠️ Ollama not available: %s", e)
             results["ollama"] = False
         
         return results
@@ -279,7 +279,7 @@ class AgentConversationLoop:
         
         self._running = True
         self._heartbeat_task = asyncio.create_task(self._heartbeat_loop())
-        logger.info(f"💓 Heartbeat started (interval: {self.heartbeat_interval}s)")
+        logger.info("💓 Heartbeat started (interval: %ss)", self.heartbeat_interval)
     
     async def stop_heartbeat(self):
         """Stop heartbeat loop."""
@@ -365,7 +365,7 @@ class AgentConversationLoop:
                 latency_ms=latency,
             )
             
-        except Exception as e:
+        except (asyncio.TimeoutError, OSError, ValueError) as e:
             latency = (time.time() - start) * 1000
             return ConversationMessage(
                 id=uuid.uuid4().hex,
@@ -400,7 +400,7 @@ class AgentConversationLoop:
             logger.warning("No agents available for parallel query")
             return []
         
-        logger.info(f"🔀 Parallel query to {len(agents)} agents: {[a.value for a in agents]}")
+        logger.info("🔀 Parallel query to %d agents: %s", len(agents), [a.value for a in agents])
         
         tasks = [
             self.query_agent(agent, prompt, role)
@@ -415,7 +415,7 @@ class AgentConversationLoop:
             if isinstance(resp, ConversationMessage):
                 messages.append(resp)
             elif isinstance(resp, Exception):
-                logger.error(f"Agent query failed: {resp}")
+                logger.error("Agent query failed: %s", resp)
         
         return messages
     
@@ -437,12 +437,12 @@ class AgentConversationLoop:
         self.threads[thread.thread_id] = thread
         
         rounds = rounds or self.max_rounds
-        logger.info(f"🗣️ Starting conversation: {topic} ({rounds} rounds)")
+        logger.info("🗣️ Starting conversation: %s (%d rounds)", topic, rounds)
         
         current_prompt = initial_prompt
         
         for round_num in range(rounds):
-            logger.info(f"📍 Round {round_num + 1}/{rounds}")
+            logger.info("📍 Round %d/%d", round_num + 1, rounds)
             
             # Query all agents in parallel
             responses = await self.query_agents_parallel(
@@ -452,7 +452,7 @@ class AgentConversationLoop:
             
             for msg in responses:
                 thread.add_message(msg)
-                logger.info(f"   {msg.agent_type.value}: {msg.content[:100]}...")
+                logger.info("   %s: %s...", msg.agent_type.value, msg.content[:100])
             
             if not responses:
                 logger.warning("No responses in round, stopping conversation")
@@ -470,7 +470,7 @@ class AgentConversationLoop:
         saved_path = thread.save()
         self._last_saved_conversation = saved_path
         
-        logger.info(f"✅ Conversation complete: {len(thread.messages)} messages")
+        logger.info("✅ Conversation complete: %d messages", len(thread.messages))
         return thread
     
     def _synthesize_next_prompt(
@@ -536,7 +536,7 @@ Provide:
         evolution_focus: str = "diversity"
     ) -> List[Dict[str, Any]]:
         """Generate population variants through agent collaboration."""
-        logger.info(f"🧬 Generating {num_variants} variants for: {base_concept}")
+        logger.info("🧬 Generating %d variants for: %s", num_variants, base_concept)
         
         variants = []
         

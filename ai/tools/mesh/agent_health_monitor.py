@@ -114,7 +114,7 @@ class AgentHealthMonitor:
                                 status = "degraded"
                             else:
                                 status = "stale"
-                        except:
+                        except ValueError:
                             status = "degraded"
                     
                     agents.append(AgentStatus(
@@ -130,8 +130,8 @@ class AgentHealthMonitor:
                         details=agent_data
                     ))
                     
-        except Exception as e:
-            logger.warning(f"Failed to check Discovery agents: {e}")
+        except (httpx.RequestError, asyncio.TimeoutError, KeyError) as e:
+            logger.warning("Failed to check Discovery agents: %s", e)
         
         return agents
     
@@ -155,7 +155,7 @@ class AgentHealthMonitor:
                         "models": [m.get("name") for m in models]
                     }
                 )
-        except:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError):
             return AgentStatus(
                 agent_id="ollama-local",
                 agent_type="local_llm",
@@ -207,7 +207,7 @@ class AgentHealthMonitor:
                 source="gemini",
                 details={"error": "google-generativeai not installed"}
             )
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError) as e:
             return AgentStatus(
                 agent_id="gemini-cloud",
                 agent_type="cloud_llm",

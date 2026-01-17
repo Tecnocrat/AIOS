@@ -24,11 +24,12 @@ try:
     HTTPX_AVAILABLE = True
 except ImportError:
     HTTPX_AVAILABLE = False
-    try:
-        import requests
-        REQUESTS_AVAILABLE = True
-    except ImportError:
-        REQUESTS_AVAILABLE = False
+
+try:
+    import requests as requests_lib
+    REQUESTS_AVAILABLE = True
+except ImportError:
+    REQUESTS_AVAILABLE = False
 
 logging.basicConfig(
     level=logging.INFO,
@@ -76,13 +77,11 @@ class CrystalLoader:
         
         try:
             if HTTPX_AVAILABLE:
-                import httpx
                 with httpx.Client(timeout=10.0) as client:
                     response = client.post(url, json=query)
                     result = response.json()
             elif REQUESTS_AVAILABLE:
-                import requests
-                response = requests.post(url, json=query, timeout=10)
+                response = requests_lib.post(url, json=query, timeout=10)
                 result = response.json()
             else:
                 logger.error("No HTTP client available")
@@ -98,7 +97,7 @@ class CrystalLoader:
             
             return self.crystals
             
-        except Exception as e:
+        except (httpx.RequestError, OSError, ValueError) as e:
             logger.warning("Crystal load failed (Memory Cell may be offline): %s", e)
             return []
     
@@ -246,17 +245,15 @@ def crystallize(
     
     try:
         if HTTPX_AVAILABLE:
-            import httpx
             with httpx.Client(timeout=10.0) as client:
                 response = client.post(url, json=crystal)
                 return response.json()
         elif REQUESTS_AVAILABLE:
-            import requests
-            response = requests.post(url, json=crystal, timeout=10)
+            response = requests_lib.post(url, json=crystal, timeout=10)
             return response.json()
         else:
             return {"status": "error", "message": "no http client"}
-    except Exception as e:
+    except (httpx.RequestError, OSError, ValueError) as e:
         return {"status": "error", "message": str(e)}
 
 

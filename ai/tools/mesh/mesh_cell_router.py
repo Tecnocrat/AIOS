@@ -159,7 +159,7 @@ class MeshCellRouter:
         # HTTP client
         self._http_client: Optional[httpx.AsyncClient] = None
         
-        logger.info(f"🌐 Mesh Cell Router initialized (strategy: {strategy.value})")
+        logger.info("🌐 Mesh Cell Router initialized (strategy: %s)", strategy.value)
     
     # ─────────────────────────────────────────────────────────────────────────
     # LIFECYCLE
@@ -199,8 +199,8 @@ class MeshCellRouter:
         while self._running:
             try:
                 await self._check_all_cells_health()
-            except Exception as e:
-                logger.error(f"Health check error: {e}")
+            except (httpx.RequestError, asyncio.TimeoutError, OSError) as e:
+                logger.error("Health check error: %s", e)
             
             await asyncio.sleep(self.health_check_interval)
     
@@ -229,7 +229,7 @@ class MeshCellRouter:
                 
             cell.last_heartbeat = datetime.now(timezone.utc)
             
-        except Exception:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError):
             cell.state = CellState.OFFLINE
             cell.error_count += 1
     
@@ -262,11 +262,11 @@ class MeshCellRouter:
                     
                     self.cells[cell_id].update_from_discovery(cell_info)
                 
-                logger.info(f"📡 Discovered {len(cells_data)} cells")
+                logger.info("📡 Discovered %d cells", len(cells_data))
                 return len(cells_data)
                 
-        except Exception as e:
-            logger.warning(f"Discovery failed: {e}")
+        except (httpx.RequestError, asyncio.TimeoutError, OSError, KeyError) as e:
+            logger.warning("Discovery failed: %s", e)
             
             # Add local fallback cells
             self._add_local_cells()
@@ -308,7 +308,7 @@ class MeshCellRouter:
             state=CellState.UNKNOWN,
         )
         self.cells[cell_id] = cell
-        logger.info(f"📝 Registered cell: {cell_id} at {ip}:{port}")
+        logger.info("📝 Registered cell: %s at %s:%d", cell_id, ip, port)
         return cell
     
     # ─────────────────────────────────────────────────────────────────────────
@@ -412,7 +412,7 @@ class MeshCellRouter:
                 latency_ms=latency,
             )
             
-        except Exception as e:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError, ValueError) as e:
             self._total_errors += 1
             cell.error_count += 1
             
@@ -469,7 +469,7 @@ class MeshCellRouter:
                 latency_ms=latency,
             )
             
-        except Exception as e:
+        except (httpx.RequestError, asyncio.TimeoutError, OSError, ValueError) as e:
             return RouteResult(
                 success=False,
                 cell_id=cell.cell_id,
@@ -601,8 +601,8 @@ class PopulationMeshBridge:
                     stats = self.orchestrator.get_population_stats()
                     await self._sync_population_stats(stats)
                     
-            except Exception as e:
-                logger.error(f"Sync error: {e}")
+            except (httpx.RequestError, asyncio.TimeoutError, OSError, AttributeError) as e:
+                logger.error("Sync error: %s", e)
             
             await asyncio.sleep(30)  # Sync every 30 seconds
     
