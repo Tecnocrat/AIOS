@@ -25,9 +25,9 @@ try:
     from mcp.server import Server
     from mcp.server.stdio import stdio_server
     from mcp.types import (
-        Resource, 
-        Tool, 
-        TextContent, 
+        Resource,
+        Tool,
+        TextContent,
         ImageContent,
         EmbeddedResource,
         Prompt,
@@ -68,7 +68,7 @@ class AIOSMCPServer:
     - Consciousness: Tracks system intelligence metrics
     - AINLP: Enforces enhancement over creation patterns
     """
-    
+
     def __init__(self, workspace_root: str = None):
         """
         Initialize AIOS MCP Server
@@ -78,71 +78,71 @@ class AIOSMCPServer:
         """
         self.workspace_root = Path(workspace_root or Path.cwd())
         logger.info(f"Initializing AIOS MCP Server for workspace: {self.workspace_root}")
-        
+
         # Initialize server
         self.server = Server("aios-context")
-        
+
         # Initialize providers
         self.resource_provider = AIOSResourceProvider(self.workspace_root)
         self.tool_provider = AIOSToolProvider(self.workspace_root)
         self.prompt_provider = AIOSPromptProvider(self.workspace_root)
         self.diagnostics = DiagnosticsCollector(self.workspace_root)
-        
+
         # Register handlers
         self._register_handlers()
-        
+
         logger.info("AIOS MCP Server initialized successfully")
-    
+
     def _register_handlers(self):
         """Register MCP protocol handlers"""
-        
+
         # Resources
         @self.server.list_resources()
         async def list_resources() -> list[Resource]:
             """List all available AIOS resources"""
             logger.info("Listing AIOS resources")
             return await self.resource_provider.list_resources()
-        
+
         @self.server.read_resource()
         async def read_resource(uri: str) -> str:
             """Read AIOS resource content"""
             logger.info(f"Reading resource: {uri}")
             return await self.resource_provider.read_resource(uri)
-        
+
         # Tools
         @self.server.list_tools()
         async def list_tools() -> list[Tool]:
             """List all available AIOS tools"""
             logger.info("Listing AIOS tools")
             return await self.tool_provider.list_tools()
-        
+
         @self.server.call_tool()
         async def call_tool(name: str, arguments: dict) -> Sequence[TextContent | ImageContent | EmbeddedResource]:
             """Execute AIOS tool"""
             logger.info(f"Calling tool: {name} with args: {arguments}")
             result = await self.tool_provider.call_tool(name, arguments)
             return [TextContent(type="text", text=json.dumps(result, indent=2))]
-        
+
         # Prompts
         @self.server.list_prompts()
         async def list_prompts() -> list[Prompt]:
             """List all available AIOS prompts"""
             logger.info("Listing AIOS prompts")
             return await self.prompt_provider.list_prompts()
-        
+
         @self.server.get_prompt()
         async def get_prompt(name: str, arguments: dict) -> GetPromptResult:
             """Get AIOS prompt with arguments"""
             logger.info(f"Getting prompt: {name} with args: {arguments}")
             return await self.prompt_provider.get_prompt(name, arguments)
-    
+
     async def run(self):
         """Run the MCP server"""
         logger.info("Starting AIOS MCP Server")
         
         # Log startup metrics
         await self._log_startup_metrics()
-        
+
         # Run stdio server
         async with stdio_server() as (read_stream, write_stream):
             await self.server.run(
@@ -150,7 +150,7 @@ class AIOSMCPServer:
                 write_stream,
                 self.server.create_initialization_options()
             )
-    
+
     async def _log_startup_metrics(self):
         """Log AIOS metrics at startup"""
         try:
@@ -160,11 +160,11 @@ class AIOSMCPServer:
                 with open(consciousness_file, 'r') as f:
                     metrics = json.load(f)
                     logger.info(f"Current consciousness level: {metrics.get('current_level', 'unknown')}")
-            
+
             # Count resources available
             resources = await self.resource_provider.list_resources()
             logger.info(f"Available resources: {len(resources)}")
-            
+
             # Count tools available
             tools = await self.tool_provider.list_tools()
             logger.info(f"Available tools: {len(tools)}")
