@@ -64,6 +64,18 @@
 
 ---
 
+## 🗂️ **DOMAIN EXTENSIONS**
+
+| Domain | Document | Scope | Status |
+|--------|----------|-------|--------|
+| **Windows Orchestration** | [`aios-win/dev_path_win.md`](../aios-win/dev_path_win.md) | BIOS boot, TOON optimization, container status, diagnostic commands | 🟢 Active |
+| **Quantum Experiments** | [`aios-quantum/README.md`](../aios-quantum/README.md) | Arithmetic verification, boot protocols | 🟢 Active |
+| **Server Stacks** | [`aios-server/README.md`](../aios-server/README.md) | Docker stacks, observability, cells | 🟢 Active |
+
+> **Pattern**: Canonical DEV_PATH.md + domain-specific extensions. Each extension uses AINLP pointer `→DEV_PATH.md` to reference canonical.
+
+---
+
 ## 🌌 **COSMOVISION: AIOS FRACTAL ARCHITECTURE**
 
 **Date**: January 15, 2026  
